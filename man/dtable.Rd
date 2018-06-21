@@ -23,7 +23,7 @@ dtable(x, bset, bsep = ".", asep = ";", missing = "x", noc = "0")
 dtable returns a data frame with 7 columns: "id1" indicates the subject under observation and "id2" it's interaction partner. "sender_id1" takes the values 1 or 0 whether id1 is the sender or not. If not, id2 is the sender. "behavior" indicates the behavior observed. If no ocurrences or misses where observed, "no_ocurrence" and "missing" take the value 1. All entries of multiple actions are separated in consecutive rows. All characters are changed to lower case and any white spaces are removed.
 }
 \description{
-dtable takes an object representing the data record of field behavior observations of dyadic social interactions and returns a data frame of the same data organized in a way suitable for further statistical analysis.
+dtable takes an object corresponding to the data record of field behavior observations of dyadic social interactions and returns a data frame of the same data organized in a way suitable for further statistical analysis.
 }
 \examples{
 

@@ -1,6 +1,6 @@
 #' dtable
 #'
-#' dtable takes an object representing the data record of field behavior observations of dyadic social interactions and returns a data frame of the same data organized in a way suitable for further statistical analysis.
+#' dtable takes an object corresponding to the data record of field behavior observations of dyadic social interactions and returns a data frame of the same data organized in a way suitable for further statistical analysis.
 #'
 #' @param x Behavior observation field record. An object with one row per observation and 3 columns: id of the subject under observation, the action observed and the observer id. Action entries may refer to the interaction partner and the behavior observed: [behavior][bsep][partner id] if partner is the target or [partner id][bsep][behavior] if subject is the target.
 #' @param bset A vector specifying the set of behaviors observed.
