@@ -46,8 +46,7 @@ where `id1` is the subject under observation, `act` the action observed and `obs
 
 The following uses `dtable()` function on `ex_field_data` (see the details above) to  make the input for `countb()` function. The set of behaviors `bset` must be specified for input in `dtable()`:
 
-``` {r, eval = F, echo = F}
- ## Considering ex_field_data, count the number of positive and negative interactions between the various subjects S1, s2, ..., s9 observed by observers 1 and 2. But first converting the raw data to suitable form of input for countb()
+``` {r}
  bset <- c("+","-")
  input <- dtable(ex_field_data, bset)
  observations <- countb(input)

@@ -48,4 +48,10 @@ Example
 
 The following uses `dtable()` function on `ex_field_data` (see the details above) to make the input for `countb()` function. The set of behaviors `bset` must be specified for input in `dtable()`:
 
+``` r
+ bset <- c("+","-")
+ input <- dtable(ex_field_data, bset)
+ observations <- countb(input)
+```
+
 Read `dtable` and `countb` help files (`?dtable` and `?countb`) to learn more details about these function's input and output.
