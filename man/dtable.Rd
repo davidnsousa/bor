@@ -7,27 +7,51 @@
 dtable(x, bset, bsep = ".", asep = ";", missing = "x", noc = "0")
 }
 \arguments{
-\item{x}{Behavior observation field record. An object with one row per observation and 3 columns: id of the subject under observation, the action observed and the observer id. Action entries may refer to the interaction partner and the behavior observed: [behavior][bsep][partner id] if partner is the target or [partner id][bsep][behavior] if subject is the target.}
+\item{x}{data frame containing raw focal observations' data, referring to
+dyadic social interactions. This data frame should contain one focal
+observation per row and 3 columns. The first column should refer to focal's
+subject identification code; the second, to the recorded dyadic social
+interactions; and the third, to observer's identification code. See
+ex_field_data for further details on the structure of this data frame.}
 
-\item{bset}{A vector specifying the set of behaviors observed.}
+\item{bset}{A vector specifying the codes of the recorded social
+interactions.}
 
-\item{bsep}{A separation character for bset elements and id's. Default is ".".}
+\item{bsep}{The separation character used in the second column of x to
+separate subject's id code from social interactions code. Default is ".".}
 
-\item{asep}{A separation character for multiple actions in just one entry. Default is ";".}
+\item{asep}{The separation character used in the second column of x to
+separate different social interactions recorded within the same focal
+sample. Default is ";".}
 
-\item{missing}{A character specifying missing subjects. Default is "x".}
+\item{missing}{A character, used in the second column of x, to identify focal
+observations where the focal subject was unavailable for observation.
+Default is "x".}
 
-\item{noc}{A character specifying no ocorrences. Default is "0".}
+\item{noc}{A character, used in the second column of x, to identify focal
+observations where no social interactions were recorded. Default is "0".}
 }
 \value{
-dtable returns a data frame with 7 columns: "id1" indicates the subject under observation and "id2" it's interaction partner. "sender_id1" takes the values 1 or 0 whether id1 is the sender or not. If not, id2 is the sender. "behavior" indicates the behavior observed. If no ocurrences or misses where observed, "no_ocurrence" and "missing" take the value 1. All entries of multiple actions are separated in consecutive rows. All characters are changed to lower case and any white spaces are removed.
+dtable returns a data frame with 7 columns: "id1" identifies the
+  focal subject's; "sender_id1" identifies whether the focal's subject (id1)
+  was the initiator of the dyadic social interaction (coded 1), or the target
+  of the social interaction (coded 0; in this case the initiator is the
+  subject referred in the column "id2"); "behavior" identifies the social
+  interaction observed; if no social interactions were recorded in a focal
+  sample, "no_occurrence" and "missing" columns specify whether the focal
+  subject was observed but did not interact, or was unavailable for
+  observation, respectively; "observer" columns indentifies the observer.
 }
 \description{
-dtable takes an object corresponding to the data record of field behavior observations of dyadic social interactions and returns a data frame of the same data organized in a way suitable for further statistical analysis.
+dtable takes a data frame containing raw focal observations' data and
+transforms it into another data frame more suitable for further data
+analysis.
 }
 \examples{
-
-## converting the field raw data of behavior observations to suitable form useful for further statistical analysis
-bset <- c("+","-")
-data <- dtable(ex_field_data, bset)
+## convert raw focal observations' data in ex_field_data
+## see ?ex_field_data for further details
+## bsep, asep, missing and noc arguments take default values (".", ";", "x", "0" respectively)
+b <- c("+","-")
+data <- dtable(ex_field_data, bset = b)
+head(data)
 }

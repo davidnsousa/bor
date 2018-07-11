@@ -93,6 +93,6 @@ Below we leave **bsep**, **asep**, **missing** and **noc**  `dtable()`'s argumen
   data2
 ```
 
-`data2` is a list of lists: one for each observer (in this example **data2$`1`** and **data2$`2`**). Inside each list there is one asymmetric interaction matrix per social interaction recorded (e.g., **data2$`1`$`-`**). Cells in these matrices provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
+`data2` is a list of lists: one for each observer (in this example ``data2$`1` `` and ``data2$`2` ``). Inside each list there is one asymmetric interaction matrix per social interaction recorded (e.g., ``data2$`1`$`-` ``). Cells in these matrices provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
 
 See `?countb` for further details on the `countb()` function.
