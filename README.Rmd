@@ -13,19 +13,26 @@ library(bor)
 
 ## Overview
 
-`bor`  is an `R` package design for data analysis of field behavior observations of dyadic social interactions. Currently the package provides only two functions. The package includes 3 objects:
+`bor`  is an `R` package designed to transform focal observations' data, referring to the occurrence of social interactions, into asymmetric data matrices. Each matrix cell provides counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
 
-* `dtable()` a function to prepare your field data records for further statistical analysis;
-* `countb()` a function to count the number of interactions observed of each interaction type for each individual under observation;
-* `ex_field_data` a data frame containing an example of a field data record;
+Currently, the package includes three objects:
 
-Read `bor` help file (`?bor`) to learn more about this package;
+* `dtable()` a function that transforms raw focal observations' data into a data frame
+more suitable for data analysis
+
+* `countb()` a function that computes asymmetric data matrices, separately for each observer and type of social interaction, from a data frame with a structure similar to that of the output of `dtable()` function
+
+* `ex_field_data` a data frame containing an example of raw focal observations' data; data frames passed to `dtable()` function should have this structure.
+
+
+Read `bor` help file (`?bor`) to learn more about this package.
+
 
 ## Installation
 
 ```{r, eval = F}
-# to install R packages from github you the devtools package
-# the following installs the devtools package from CRAN
+# to install R packages from github you need the devtools package
+# to install devtools from CRAN type:
 install.packages("devtools")
 
 # to install bor from github type:
@@ -34,22 +41,58 @@ devtools::install_github("davidnsousa/bor")
 
 ## Details
 
-To show an example of how field data should be recorded for input, here we show the first few lines of `ex_field_data`:
+`ex_field_data` details the required structure of raw focal observations' data that can be passed to the `dtable()` function.
+Below we present the first lines of this data frame:
 
 ``` {r, eval = T, echo = T}
 head(ex_field_data)
 ```
 
-where `id1` is the subject under observation, `act` the action observed and `obs` the observed id. 9 subjects are considered. Actions are described by a reference to the interaction partner [partner id] (one element of the set of subjects except the self) and the behavior observed [behavior]. When [partner id] appears before [behavior], the former is the receiver and the later the sender, otherwise the symmetric is true. In this example there are two possible types of [behavior], namely a positive behavior "+" and a negative behavior "-". The behavior separation character [bsep], in this case the character ".", is use to separate behaviors from ids. Sometimes multiple actions are recorded in the same action entry (multiple dyadic interactions by the same subject in the same time interval). In these cases an action separation character [asep] is needed. In this example, a ";" is used. Action entries are equal to "x" or "0" when subjects are missing or no ocurrences are observed. The third variable indicates the observer of a particular observation. In this hypothetical record, two observers did the job (See `?ex_field_data`).
+* `id1` - focal subject's identification code.
+  + This example includes 9 different subjects (coded **s1** to **s9**).
+
+* `act` - recorded social interactions (SIs) in each focal sample.
+  + In this example two different SIs were recorded (coded **+** and **-**); SIs codes, subjects' id codes, and separation characters should not overlap.
+  + The **.** character is used to separate subjects' id codes from the SIs' codes, and the **;** character is used to separate different SIs occurring within the same focal sample.
+  + Whenever a subject's id appears before a SI's code it means that, that subject initiated a SI with the focal subject (see row 6 of `ex_field_data`); whenever a subject's id appears after the SI's it means that the focal subject (id1 column) initiated a SI with that subject (see row 4).
+  + For example, in `ex_field_data`, the 4th row indicates that the focal subject **s1** initiated a **+** social interaction with subject **s4**, while the 6th row indicates that the focal subject **s5** was involved in two social interactions- the first initiated by **s4** (**-**), the second (**+**) initiated by **s2**.
+  + **0**s in this column refer to focal observations where no SIs were recorded, and **x**s refer to focal observations where the focal subject was unavailable for observation.
+
+* `obs` - observer's identification code.
+  + This example includes 2 different observers (coded **1** and **2**).
+
+See `?ex_field_data` for further details.
+`dtable()` function does not require that the input data frame has matching column names to that of `ex_field_data`, but input data frame should include three columns, with the type of data as described above and in the same column order.
+
 
 ## Example
 
-The following uses `dtable()` function on `ex_field_data` (see the details above) to  make the input for `countb()` function. The set of behaviors `bset` must be specified for input in `dtable()`:
+The following uses `dtable()` function to convert `ex_field_data` data frame (see details above) in a new data frame (e.g., **data**) that can be passed to `countb()` function.
+`dtable()` function requires that recorded social interactions' codes are provided (**bset** argument). In `ex_field_data` these codes are **+** and **-**.
+Below we leave **bsep**, **asep**, **missing** and **noc**  `dtable()`'s arguments at their default values (".", ";", "x", "0" respectively). See `?dtable` for further details.
 
 ``` {r}
- bset <- c("+","-")
- input <- dtable(ex_field_data, bset)
- observations <- countb(input)
+ b <- c("+","-")
+ data <- dtable(ex_field_data, bset = b)
+ head(data)
 ```
 
-Read `dtable` and `countb` help files (`?dtable` and `?countb`) to learn more details about these function's input and output.
+`data` object has 7 columns: 
+* `id1`- focal subject's identification code.
+* `id2`- identification code of the social interactions partner.
+* `sender_id1` - indicates whether the focal subject was the initiator/sender (coded 1) or the target of the social interaction (coded 0).
+* `behavior` - indicates the code of the social interaction recorded.
+* `no_occurrence` - indicates whether no social interaction were recorded (coded 1; NA otherwise).
+* `missing` - indicates whether the focal subject was unavailable for observation (coded 1; NA otherwise).
+* `observer` - observer's identification code.
+
+`countb()` function can now be used on `data` to compute asymmetric data matrices, containing the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject (target), separately for each social interaction and for each observer. Data matrices are stored inside a list (e.g., **observations**).
+
+``` {r}
+  data2 <- countb(data)
+  data2
+```
+
+`data2` is a list of lists: one for each observer (in this example **data2$`1`** and **data2$`2`**). Inside each list there is one asymmetric interaction matrix per social interaction recorded (e.g., **data2$`1`$`-`**). Cells in these matrices provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
+
+See `?countb` for further details on the `countb()` function.
