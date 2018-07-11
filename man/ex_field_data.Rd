@@ -18,7 +18,7 @@ ex_field_data
 \description{
 A data frame containing an hypothetical (randomly generated) focal
 observations' data set to be passed to dtable(). This example cantains 100
-records of social interactions in a group of 9 subjects.
+focal samples in a group of 9 subjects.
 }
 \details{
 In this example two different SIs were recorded (coded + and -); SIs
