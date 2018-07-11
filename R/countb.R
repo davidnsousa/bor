@@ -28,7 +28,8 @@
 #'
 #' @examples
 #' ## create list of asymmetric matrices (data2) from data object
-#' ## data object is obtained by converting raw focal observations' data in ex_field_data with dtable function
+#' ## data object is obtained by converting raw focal observations' data in ex_field_data with
+#' ## dtable function
 #'  b <- c("+","-")
 #'  data <- dtable(ex_field_data, bset = b)
 #'  data2 <- countb(data)
@@ -36,10 +37,12 @@
 
 countb <- function(x){
 
+  observer <- NULL
+  behavior <- NULL
 # lower case all characters and remove white space characters
   x <- apply(x, 2 , function(x) tolower(x))
   x <- as.data.frame(apply(x, 2, function(x) gsub(' ', '', x)), stringsAsFactors = FALSE)
-  x <- setNames(x,c("id1", "id2", "sender_id1", "behavior", "no_occurrence", "missing", "observer"))
+  x <- stats::setNames(x,c("id1", "id2", "sender_id1", "behavior", "no_occurrence", "missing", "observer"))
 # get subjects' identfication codes
   ids <- sort(union(unique(x$id1),unique(x$id2)))
 # get observers' identfication codes

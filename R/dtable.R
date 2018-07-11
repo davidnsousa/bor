@@ -99,7 +99,7 @@ dtable <- function(x, bset, bsep = ".", asep = ";", missing = "x", noc = "0"){
 
 # creates an empy data frame, dt, with 7 columns,
 # and with the same number of rows as x data frame
-  dt <- setNames(data.frame(matrix(ncol = 7, nrow = size)),
+  dt <- stats::setNames(data.frame(matrix(ncol = 7, nrow = size)),
                  c("id1","id2","sender_id1","behavior","no_occurrence","missing","observer"))
 
 # for cycle to fill dt data frame
@@ -126,7 +126,7 @@ dtable <- function(x, bset, bsep = ".", asep = ";", missing = "x", noc = "0"){
     # indexed by sender_id1 + 1 = 2. if TRUE is at the second position, then id2
     # is the sender, that is, sender_id1 = 0, and in that case, id2 is indicated
     # by the first position in act, indexed by sender_id1 + 1 = 1.
-      dt$behavior[i] <- bset[na.omit(match(act, bset))]
+      dt$behavior[i] <- bset[stats::na.omit(match(act, bset))]
       dt$sender_id1[i] = c(1,0)[!is.na(match(act, bset))]
       dt$id2[i] <- act[dt$sender_id1[i] + 1]
     }

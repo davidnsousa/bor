@@ -11,6 +11,8 @@ Description: Transforms focal observations' data, where different types of socia
   Each cell in these matrices provides counts on the number of times
   a specific type of social interaction was initiated by the row subject and
   directed to the column subject.
+Imports: stats (>= 3.4.2)
+Depends: R (>= 2.10)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
