@@ -1,10 +1,16 @@
 Package: bor
 Type: Package
-Title: Behavior Observation in R
+Title: Transforming Behavioral Observation Records Into Data Matrices
 Version: 0.1.0
-Author: David N. Sousa, João R. Daniel
-Maintainer: David N. Sousa <davidnsousa@gmail.com>
-Description: Data analysis for field behavior observations of dyadic social interactions
+Authors@R: c(
+  person("David N", "Sousa", email = "davidnsousa@gmail.com", role = c("aut", "cre")),
+  person("Joao R", "Daniel", email = "joaordaniel@gmail.com", role = "aut",
+  comment = c(ORCID = "https://orcid.org/0000-0001-6609-2014")))
+Description: Transforms focal observations' data, where different types of social interactions
+  can be recorded by multiple observers, into asymmetric data matrices.
+  Each cell in these matrices provides counts on the number of times
+  a specific type of social interaction was initiated by the row subject and
+  directed to the column subject.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
