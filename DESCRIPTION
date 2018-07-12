@@ -1,6 +1,6 @@
 Package: bor
 Type: Package
-Title: Transforming Behavioral Observation Records Into Data Matrices
+Title: Transforming Behavioral Observation Records into Data Matrices
 Version: 0.1.0
 Authors@R: c(
   person("David N", "Sousa", email = "davidnsousa@gmail.com", role = c("aut", "cre")),
