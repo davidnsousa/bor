@@ -40,7 +40,7 @@ dtable returns a data frame with 7 columns: "id1" identifies the
   interaction observed; if no social interactions were recorded in a focal
   sample, "no_occurrence" and "missing" columns specify whether the focal
   subject was observed but did not interact, or was unavailable for
-  observation, respectively; "observer" columns indentifies the observer.
+  observation, respectively; "observer" columns identifies the observer.
 }
 \description{
 dtable takes a data frame containing raw focal observations' data and

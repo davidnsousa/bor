@@ -1,7 +1,7 @@
 #' countb
 #'
 #' countb takes a data frame with dyadic social interactions' data (akin to that
-#' returned by dtable function) and returns a list of asymetric data matrices-
+#' returned by dtable function) and returns a list of asymmetric data matrices-
 #' one for each observer and type of social interaction. Each matrix cell
 #' provides counts on the number of times a specific type of social interaction
 #' was initiated by the row subject and directed to the column subject.

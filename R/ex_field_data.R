@@ -2,7 +2,7 @@
 #'
 #'
 #'A data frame containing an hypothetical (randomly generated) focal
-#'observations' data set to be passed to dtable(). This example cantains 100
+#'observations' data set to be passed to dtable(). This example contains 100
 #'focal samples in a group of 9 subjects.
 #'
 #'@format Data frame containing raw focal observations' data, referring to

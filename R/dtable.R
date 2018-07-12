@@ -36,7 +36,7 @@
 #'   interaction observed; if no social interactions were recorded in a focal
 #'   sample, "no_occurrence" and "missing" columns specify whether the focal
 #'   subject was observed but did not interact, or was unavailable for
-#'   observation, respectively; "observer" columns indentifies the observer.
+#'   observation, respectively; "observer" columns identifies the observer.
 #'
 #' @export
 #'
