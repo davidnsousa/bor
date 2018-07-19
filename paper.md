@@ -20,7 +20,7 @@ bibliography: paper.bib
 
 # Summary
 
-``bor`` is an R [@R] package developed to transform raw focal sampling data of social interaction events into asymmetric data matrices (one for each type of social interaction recorded). Focal sampling is a widely used sampling method in observational studies [@altmann1974observational,@lehner1998handbook,@martin1993measuring].  When referring to social interactions, focal samples detail with whom the focal subject interacted with, the type of social interactions that took place, and who was responsible for initiating these interactions.
+``bor`` [@bor] is an R [@R] package developed to transform raw focal sampling data of social interaction events into asymmetric data matrices (one for each type of social interaction recorded). Focal sampling is a widely used sampling method in observational studies [@altmann1974observational,@lehner1998handbook,@martin1993measuring].  When referring to social interactions, focal samples detail with whom the focal subject interacted with, the type of social interactions that took place, and who was responsible for initiating these interactions.
 
 Converting hundreds of social behavior records, of who does what to whom, to data structures more appropriate for data analysis is cumbersome process. Here, we present how bor can be used for wrangling social interactions' events into data matrices. In these matrices, cells provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject. Transforming focal sampling data into matrices allows users to easily use R base functions and other packages' functionalities to further analyze their data.
 
@@ -30,16 +30,16 @@ The following installs and loads bor package from CRAN:
 ```
   # install bor from CRAN
   install.packages("bor")
-  
+
   # load bor
   library(bor)
 ```
 
 The package includes three objects:
 
-* `dtable` a function that tidies raw focal observations' data into a data frame more suitable for data processing
+* `dtable` a function that tidies raw focal observations' data into a data frame more suitable for data processing.
 
-* `countb` a function that computes asymmetric data matrices, separately for each observer and type of social interaction recorded, from a data frame with a structure similar to that of the output of `dtable` function
+* `countb` a function that computes asymmetric data matrices, separately for each observer and type of social interaction recorded, from a data frame with a structure similar to that of the output of `dtable` function.
 
 * `ex_field_data` a data frame containing an example of raw focal observations' data (data frames passed to `dtable` function should have this structure).
 
@@ -50,7 +50,7 @@ The package includes three objects:
 
 ```
   head(ex_field_data)
-  
+
   #>   id1       act obs
   #> 1  s2         x   1
   #> 2  s3         0   1
