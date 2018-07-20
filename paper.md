@@ -1,5 +1,5 @@
 ---
-title: 'bor: An R Package for Transforming Behavioral Observation Records into Data Matrice'
+title: 'bor: An R Package for Transforming Behavioral Observation Records into Data Matrices'
 tags:
   - focal sample
   - social behavior
