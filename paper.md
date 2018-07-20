@@ -22,10 +22,10 @@ bibliography: paper.bib
 
 ``bor`` [@bor] is an R [@R] package developed to transform raw focal sampling data of social interaction events into asymmetric data matrices (one for each type of social interaction recorded). Focal sampling is a widely used sampling method in observational studies [@altmann1974observational,@lehner1998handbook,@martin1993measuring].  When referring to social interactions, focal samples detail with whom the focal subject interacted with, the type of social interactions that took place, and who was responsible for initiating these interactions.
 
-Converting hundreds of social behavior records, of who does what to whom, to data structures more appropriate for data analysis is cumbersome process. Here, we present how bor can be used for wrangling social interactions' events into data matrices. In these matrices, cells provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject. Transforming focal sampling data into matrices allows users to easily use R base functions and other packages' functionalities to further analyze their data.
+Converting hundreds of social behavior records, of who does what to whom, to data structures more appropriate for data analysis is a cumbersome process. Here, we present how ``bor`` can be used for wrangling social interactions' events into data matrices. In these matrices, cells provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject. Transforming focal sampling data into matrices allows users to easily use R base functions and other packages' functionalities to further analyze their data.
 
 # Example
-The following installs and loads bor package from CRAN:
+The following installs and loads ``bor`` package:
 
 ```
   # install bor from CRAN
@@ -60,11 +60,11 @@ The package includes three objects:
   #> 6  s5 s4.-;s2.+   1
 ```
 
-Here, **id1** refers to the focal subject's identification code, **act** refers to the recorded social interactions in each focal sample, and **obs** refers to the observer's identification code. In this example two different social interactions were recorded (coded "+" and "-"); social interactions' codes, subjects' id codes, and separation characters should not overlap). The "." character in **act** is used to separate a subject's id code from the social interaction code, and the ";" character is used to separate different social interactions occurring within the same focal sample (other characters can be used; please see the example below detailing the use of `dtable` function). Whenever a subject's id appears before a social interactions' code it means that, that subject initiated a social interaction with the focal subject (see row 6) and whenever a subject's id appears after the social interactions' code it means that the focal subject (id1 column) initiated a social interaction with that subject (see row 4).
+Here, **id1** refers to the focal subject's identification code, **act** refers to the recorded social interactions in each focal sample, and **obs** refers to the observer's identification code. In this example two different social interactions were recorded (coded "+" and "-"; social interactions' codes, subjects' id codes, and separation characters should not overlap). The "." character in **act** is used to separate a subject's id code from the social interaction code, and the ";" character is used to separate different social interactions occurring within the same focal sample (other characters can be used; please see the example below detailing the use of `dtable` function). Whenever a subject's id appears before a social interaction code it means that, that subject initiated a social interaction with the focal subject (see row 6) and whenever a subject's id appears after the social interaction code it means that the focal subject (id1 column) initiated a social interaction with that subject (see row 4).
 
 For example, the 4th row indicates that the focal subject **s1** initiated a "+" social interaction with subject **s4**, while the 6th row indicates that the focal subject **s5** was involved in two social interactions- the first initiated by **s4** ("-"), the second ("+") initiated by **s2**. A "0" in this column refers to a focal sample where no social interactions were recorded, and an "x" refers to focal sample where the focal subject was unavailable for observation.
 
-`dtable` function does not require that the input data frame has matching column names to that of `ex_field_data`. Nevertheless, the input data frame should include three columns, in the same order as above, containing the same information, and with the same type of coding scheme for social interactions (i.e., the subject id that interacted with the focal should appear before/after the social interaction code, if he was the initiator/target of the social interaction; focal subject's id omitted in **act** column).
+`dtable` function does not require that the input data frame has matching column names to that of `ex_field_data`. Nevertheless, the input data frame should include three columns, in the same order as above, containing the same information, and with the same type of coding scheme for social interactions (i.e., the subject id that interacted with the focal should appear before/after the social interaction code, if he was the initiator/target of the social interaction; focal subject's id is omitted in **act** column).
 
 ## Tyding raw data
 
@@ -92,7 +92,7 @@ We leave all `dtable` remaining arguments: **bsep**, **asep**, **missing** and *
    6  s5   s4          0        -            NA      NA        1
 ```
 
-`data` object has 7 columns: **id1** is the focal subject's identification code; **id2** is the identification code of the social interactions partner; **sender_id1** indicates whether the focal subject was the initiator/sender (coded "1") or the target of the social interaction (coded "0"); **behavior** indicates the code of the social interaction recorded; **no_occurrence** indicates whether no social interactions were recorded (coded "1"; "NA" otherwise); **missing** indicates whether the focal subject was unavailable for observation (coded "1"}; "NA" otherwise); and **observer** is the observer's identification code.
+`data` object has 7 columns: **id1** is the focal subject's identification code; **id2** is the identification code of the social interaction partner; **sender_id1** indicates whether the focal subject was the initiator/sender (coded "1") or the target of the social interaction (coded "0"); **behavior** indicates the code of the social interaction recorded; **no_occurrence** indicates whether no social interactions were recorded (coded "1"; "NA" otherwise); **missing** indicates whether the focal subject was unavailable for observation (coded "1"}; "NA" otherwise); and **observer** is the observer's identification code.
 
 ## Computing matrices
 
