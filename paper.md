@@ -138,3 +138,9 @@ We leave all `dtable` remaining arguments: **bsep**, **asep**, **missing** and *
 ```
 
 `data2` is a list of lists: one for each observer (in this example ``data2\$`1` `` and ``data2\$`2` ``). Inside each list there is one asymmetric interaction matrix per social interaction recorded (e.g., `` data2\$`1`\$`-` ``, `` data2\$`1`\$`+` ``).
+
+# Acknowledgements
+
+The authors acknowledge the support of Fundação para a Ciência e Tecnologia (UID/PSI/04810/2013)
+
+# References
