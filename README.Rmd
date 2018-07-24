@@ -15,7 +15,7 @@ library(bor)
 
 ## Overview
 
-`bor`  is an `R` package designed to transform focal observations' data, referring to the occurrence of social interactions, into asymmetric data matrices. Each matrix cell provides counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
+`bor`  is an `R` package designed to transform focal observations' data, referring to the occurrence of social interaction events, into asymmetric data matrices. For example, the number of times (events) a chimpanzee observes other group members. Each matrix cell provides counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
 
 Currently, the package includes three objects:
 
