@@ -81,7 +81,21 @@ The following uses `dtable()` function to convert `ex_field_data` data frame (se
     ## 5  s1 <NA>         NA     <NA>            NA       1        1
     ## 6  s5   s4          0        -            NA      NA        1
 
-`data` object has 7 columns: \* `id1`- focal subject's identification code. \* `id2`- identification code of the social interactions partner. \* `sender_id1` - indicates whether the focal subject was the initiator/sender (coded 1) or the target of the social interaction (coded 0). \* `behavior` - indicates the code of the social interaction recorded. \* `no_occurrence` - indicates whether no social interaction were recorded (coded 1; NA otherwise). \* `missing` - indicates whether the focal subject was unavailable for observation (coded 1; NA otherwise). \* `observer` - observer's identification code.
+`data` object has 7 columns:
+
+-   `id1`- focal subject's identification code.
+
+-   `id2`- identification code of the social interactions partner.
+
+-   `sender_id1` - indicates whether the focal subject was the initiator/sender (coded 1) or the target of the social interaction (coded 0).
+
+-   `behavior` - indicates the code of the social interaction recorded.
+
+-   `no_occurrence` - indicates whether no social interaction were recorded (coded 1; NA otherwise).
+
+-   `missing` - indicates whether the focal subject was unavailable for observation (coded 1; NA otherwise).
+
+-   `observer` - observer's identification code.
 
 `countb()` function can now be used on `data` to compute asymmetric data matrices, containing the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject (target), separately for each social interaction and for each observer. Data matrices are stored inside a list (e.g., **observations**).
 
