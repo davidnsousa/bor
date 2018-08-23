@@ -1,4 +1,4 @@
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bor)](https://cran.r-project.org/package=bor) [![Rdoc](http://www.rdocumentation.org/badges/version/bor)](http://www.rdocumentation.org/packages/bor) [![Build Status](https://travis-ci.org/davidnsousa/bor.svg?branch=master)](https://travis-ci.org/davidnsousa/bor) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1317543.svg)](https://doi.org/10.5281/zenodo.1317543)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bor)](https://cran.r-project.org/package=bor) [![Rdoc](http://www.rdocumentation.org/badges/version/bor)](http://www.rdocumentation.org/packages/bor) [![Build Status](https://travis-ci.org/davidnsousa/bor.svg?branch=master)](https://travis-ci.org/davidnsousa/bor) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1317543.svg)](https://doi.org/10.5281/zenodo.1317543) [![status](http://joss.theoj.org/papers/03ad4d832eb94173552f31d8a25dceb4/status.svg)](http://joss.theoj.org/papers/03ad4d832eb94173552f31d8a25dceb4)
 
 bor
 ===
