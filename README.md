@@ -16,7 +16,7 @@ Currently, the package includes three objects:
 
 -   `ex_field_data` a data frame containing an example of raw focal observations' data; data frames passed to `dtable()` function should have this structure.
 
-For more information about this package the user can read the R documentation for `bor` (click the "rdocumentation" badge at the top of the README file). To learn more details about each `bor` object the user can type `?dtable`, `?countb` and `ex_field_data` in his R environment.
+For more information about this package the user can read the R documentation for `bor` (click the "rdocumentation" badge at the top of the README file). To learn more details about each `bor` object the user can type `?dtable`, `?countb` and `?ex_field_data` in his R environment.
 
 Installation
 ------------
