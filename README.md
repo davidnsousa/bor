@@ -142,3 +142,8 @@ The following uses `dtable()` function to convert `ex_field_data` data frame (se
 `data2` is a list of lists: one for each observer (in this example `` data2$`1` `` and `` data2$`2` ``). Inside each list there is one asymmetric interaction matrix per social interaction recorded (e.g., `` data2$`1`$`-` ``). Cells in these matrices provide counts on the number of times a specific type of social interaction was initiated by the row subject and directed to the column subject.
 
 See `?countb` for further details on the `countb()` function.
+
+Contact
+-------
+
+For more help or any further questions about this package the user can e-mail the maintainer: <davidnsousa@gmail.com>. To contribute to this package the user can fork the package github repository and propose changes.
