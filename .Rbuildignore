@@ -1,6 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README.Rmd
+^\.travis\.yml$
 ^NEWS.Rmd
 ^cran-comments.md
 ^LICENSE
+^paper.md
+^paper.bib

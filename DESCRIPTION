@@ -13,7 +13,8 @@ Description: Transforms focal observations' data, where different types of socia
   directed to the column subject.
 Imports: stats (>= 3.4.2)
 Depends: R (>= 2.10)
+Suggests: testthat
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
