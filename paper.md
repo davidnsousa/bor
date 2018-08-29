@@ -72,7 +72,8 @@ The following code uses `dtable` function to tidy `ex_field_data` data frame (se
 
 
 ```
-  ## specify the set of behaviors recorded and that will be used in bset argument
+  ## specify the set of behaviors recorded 
+  ## and that will be used in bset argument
   b <- c("+","-")
 ```
 
