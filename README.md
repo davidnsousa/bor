@@ -146,4 +146,4 @@ See `?countb` for further details on the `countb()` function.
 Contact
 -------
 
-For more help or any further questions about this package the user can e-mail the maintainer: <davidnsousa@gmail.com>. To contribute to this package the user can fork the package github repository and propose changes.
+For more help or any further questions about this package the user can e-mail the maintainer from https://davidnsousa.github.io/. To contribute to this package the user can fork the package github repository and propose changes.
